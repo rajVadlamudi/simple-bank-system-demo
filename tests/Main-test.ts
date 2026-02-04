@@ -2,7 +2,7 @@
 //npx tsc --init - creates tsconfig.json
 //npm install --save-dev jest @types/jest ts-jest typescript
 //create jest.config.js
-import Bank from '../src/bank';
+import {Bank} from '../src/main-ts/bank';
 describe('Bank', () => {
     describe('constructor', () => {
         it('should initialize with given balances', () => {

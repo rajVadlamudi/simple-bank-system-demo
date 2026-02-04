@@ -1,9 +1,13 @@
 //npx ts-node test.ts
+//npm install -g ts-node typescript
+//tsc test.ts
+// node test.js
 class Bank {
     private bal: number[];
     private n: number;
 
     constructor(balance: number[]) {
+        console.log('New account created with balances:', balance);
         this.bal = balance;
         this.n = balance.length;
     }
@@ -40,6 +44,13 @@ class Bank {
 }
 
 const bankAccount: Bank = new Bank([10, 100, 20, 50, 30]);
-    // const result:boolean = this.bankAccount.withdraw(3, 10);
-    // console.log(result);
+    console.log('withdraw 10 from AC3:'+bankAccount.withdraw(3,10))
+    console.log('Balances:', bankAccount.getBalances());
+    console.log('deposit 20 to AC1:'+bankAccount.deposit(1,20))
+    console.log('Balances:', bankAccount.getBalances());
+    console.log('transfer 20 from AC5 to AC1:'+bankAccount.transfer(5,1,20))
+    console.log('Balances:', bankAccount.getBalances());
+    console.log('transfer 15 from AC3 to AC4:'+bankAccount.transfer(3,4,15))
+    console.log('Balances:', bankAccount.getBalances());
+    console.log('withdraw 50 from AC10:'+bankAccount.withdraw(10,50))
     console.log('Balances:', bankAccount.getBalances());
